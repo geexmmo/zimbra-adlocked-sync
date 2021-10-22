@@ -1,9 +1,9 @@
 # About:
-Script generates list of emails from all disabled users in Active Directory.
+Script generates a list of emails from all disabled users in Active Directory.
 
-Locked user are being searched by `userAccountControl=514` field, meaning that search will hit only those who was mannualy blocked by AD administrators and those whose accounts are expired, users who was temporary blocked by exceeding their login attempt limits are ignored.
+Locked user are being searched by `userAccountControl=514` field, meaning that search will hit only those who was manually blocked by AD administrators and those whose accounts are expired, users who was temporary blocked by exceeding their login attempt limits are ignored.
 
-Script generates file `ADLockedAccounts.txt`, it contains `zmprov` commands that can be used to change status of Zimbra mail accounts to 'closed' or something leaving emails stored in those accounts intact.
+Script generates file `ADLockedAccounts.txt`, it contains `zmprov` commands that can be used to change status of Zimbra mail accounts to 'closed' or something, leaving emails stored in those accounts intact.
 
 # Running:
 
@@ -19,7 +19,7 @@ Script generates file `ADLockedAccounts.txt`, it contains `zmprov` commands that
 * Run script   
 `python3 AdLockSync.py`   
 * * File `ADLockedAccounts.txt` should be generated and populated with `ma $mail zimbraAccountStatus closed` commands.
-* * This file should be reviewed on first runs to make sure nothing critical will be blocked (some users for some weirdest reasons may have multiple AD account with similar emails and some of their accounts may be disabled - resulting in this emails being included in the generated list)
+* * This file should be reviewed on first runs to make sure nothing critical will be blocked (some users for some weirdest reasons may have multiple AD accounts with similar emails and some of their accounts may be disabled - resulting in this emails being included in the generated list)
 
 * Run zmprov to apply changes to account in list   
 `zmprof -f ADLockedAccounts.txt`
