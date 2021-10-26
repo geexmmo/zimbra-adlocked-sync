@@ -41,5 +41,5 @@ zmprov -f ADLockedAccounts.txt
 * Make sure the script can be executed and add it to crontab:   
 `chmod +x /opt/zimbra-adlock-sync/adLockSync.sh`
 
-* - /etc/crontab, note user `zimbra` in line above, this user will execute all commands and have access to needed run `zmprov`   
+* - /etc/crontab, note user `zimbra` in line above, this user will execute all commands and have access to run `zmprov`   
 ```1 */6 * * * zimbra /opt/zimbra-adlock-sync/adLockSync.sh > /opt/zimbra-adlock-sync/cronlog.txt 2>&1```
