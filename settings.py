@@ -4,4 +4,5 @@ settings = {
     'ADpassword': 's3cr3tPASSWORD',
     'ADserver': '10.10.10.100',
     'ADdomain': 'DC=domain,DC=com',
+    'regexMemberCheck': '^\S+@(domain.com|domain2.com)$',
 }

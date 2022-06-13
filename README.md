@@ -13,6 +13,10 @@ Script generates file `ADLockedAccounts.txt`, it contains `zmprov` commands that
 `python3 -m venv ./zimbra-adlock-sync`
 * Activate environment:   
 `source bin/activate`
+
+* Check python-ldap requirements for your system, PyPi packages not available as wheel and build may fail without dependencies:   
+(https://www.python-ldap.org/en/python-ldap-3.4.0/installing.html#build-prerequisites)
+
 * Install requirements:   
 `pip install -r requirements.txt`
 * Edit settings in `settings.py` according to your system and Active Directory setup
