@@ -35,7 +35,7 @@ while True:
           #regex check to make sure email field is correct and not just one word without domain name
           regex = re.search(settings['regexMemberCheck'], mail)
           if regex is None:
-            print('Mail field contains werid stuff, pls fix\n', user, '\n' ,mail)
+            print('Mail field contains weird stuff, pls fix\n', user, '\n' ,mail)
           else:
             locked_accounts.append(mail)
         else:
